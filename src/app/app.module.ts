@@ -4,6 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
