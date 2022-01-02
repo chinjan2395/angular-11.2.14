@@ -4,6 +4,7 @@ import {ResolveEnd, ResolveStart, RouteConfigLoadEnd, RouteConfigLoadStart, Rout
 import {SharedAnimations} from '../../../shared/shared-animations/shared-animations';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {LocalStoreService} from '../../../shared/shared-services/local-store.service';
+import {ValidationService} from '../../../shared/shared-services/validation.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -36,8 +37,15 @@ export class SignInComponent implements OnInit {
     });
 
     this.signInForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['', [
+        Validators.required,
+        Validators.minLength(4),
+      ]],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(8),
+        ValidationService.passwordValidator('alphabet-special-character')
+      ]]
     });
   }
 

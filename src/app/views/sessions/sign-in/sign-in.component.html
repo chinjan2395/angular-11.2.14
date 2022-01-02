@@ -25,7 +25,7 @@
               </div>
             </div>
             <app-error-message [control]="signInForm.controls.password"
-                               [message]="'PASSWORD'" [submitted]="submitted"></app-error-message>
+                               [controlName]="'password'" [submitted]="submitted"></app-error-message>
           </div>
           <btn-loading [loadingText]="loadingText" [loading]="loading"
                        btnClass="btn-primary btn-rounded btn-block mt-3">Sign In
