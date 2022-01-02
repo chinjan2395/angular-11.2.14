@@ -22,6 +22,8 @@
     "@angular/platform-browser-dynamic": "~11.2.14",
     "@angular/router": "~11.2.14",
     "@aws-amplify/ui-angular": "^2.0.5",
+    "@sentry/angular": "^6.16.1",
+    "@sentry/tracing": "^6.16.1",
     "ag-grid-angular": "^26.2.0",
     "ag-grid-community": "^26.2.1",
     "aws-amplify": "^4.3.11",
