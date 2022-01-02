@@ -11,4 +11,15 @@
   <li *ngIf="control?.errors?.maxlength">
     Maximum {{control?.errors?.maxlength?.requiredLength}} letter/digit allowed
   </li>
+  <li *ngIf="control?.errors?.customPattern">
+    <ng-container *ngIf="control?.errors?.customPattern[controlName]">
+      <ng-container [ngSwitch]="control?.errors?.customPattern[controlName]['type']">
+        <span *ngSwitchCase="'alphabet'">Only small case alphabets are required</span>
+        <span *ngSwitchCase="'all-alphabet'">All alphabets are required</span>
+        <span *ngSwitchCase="'alphabet-number'">Alpha-numeric are required</span>
+        <span *ngSwitchCase="'alphabet-special-character'">Alphabets with special characters are required</span>
+        <span *ngSwitchCase="'number-special-character'">Only numeric with special characters are required</span>
+      </ng-container>
+    </ng-container>
+  </li>
 </ul>
