@@ -6,7 +6,7 @@ describe('BtnLoadingComponent', () => {
     let component: BtnLoadingComponent;
     let fixture: ComponentFixture<BtnLoadingComponent>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             declarations: [BtnLoadingComponent]
         })

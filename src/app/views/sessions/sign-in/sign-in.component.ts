@@ -4,7 +4,6 @@ import {ResolveEnd, ResolveStart, RouteConfigLoadEnd, RouteConfigLoadStart, Rout
 import {SharedAnimations} from '../../../shared/shared-animations/shared-animations';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {LocalStoreService} from '../../../shared/shared-services/local-store.service';
-import {Auth} from 'aws-amplify';
 
 @Component({
   selector: 'app-sign-in',
@@ -44,7 +43,7 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  async signIn() {
+  async signIn(): Promise<any> {
     this.loading = true;
     this.submitted = true;
     this.loadingText = 'Signing in...';

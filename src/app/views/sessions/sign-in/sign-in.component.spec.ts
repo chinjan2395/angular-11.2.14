@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
 import {SignInComponent} from './sign-in.component';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -10,12 +10,12 @@ describe('SignInComponent', () => {
   let component: SignInComponent;
   let fixture: ComponentFixture<SignInComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule, ReactiveFormsModule, RouterTestingModule, MatSnackBarModule],
-      declarations: [ SignInComponent ]
+      declarations: [SignInComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

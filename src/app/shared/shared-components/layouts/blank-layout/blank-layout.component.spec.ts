@@ -6,7 +6,7 @@ describe('BlankLayoutComponent', () => {
   let component: BlankLayoutComponent;
   let fixture: ComponentFixture<BlankLayoutComponent>;
 
-  beforeEach(async () => {
+  beforeEach(waitForAsync () => {
     await TestBed.configureTestingModule({
       declarations: [ BlankLayoutComponent ]
     })

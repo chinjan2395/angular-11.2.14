@@ -1,4 +1,4 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
 import {CompletePasswordComponent} from './complete-password.component';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -9,13 +9,13 @@ describe('CompletePasswordComponent', () => {
   let component: CompletePasswordComponent;
   let fixture: ComponentFixture<CompletePasswordComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule, ReactiveFormsModule, RouterTestingModule],
       declarations: [CompletePasswordComponent]
     })
-    .compileComponents();
-  });
+      .compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CompletePasswordComponent);

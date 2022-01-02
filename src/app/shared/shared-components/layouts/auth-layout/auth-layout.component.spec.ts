@@ -7,7 +7,7 @@ describe('AuthLayoutComponent', () => {
   let component: AuthLayoutComponent;
   let fixture: ComponentFixture<AuthLayoutComponent>;
 
-  beforeEach(async () => {
+  beforeEach(waitForAsync () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       declarations: [AuthLayoutComponent]

@@ -7,7 +7,7 @@ describe('AdminLayoutComponent', () => {
   let component: AdminLayoutComponent;
   let fixture: ComponentFixture<AdminLayoutComponent>;
 
-  beforeEach(async () => {
+  beforeEach(waitForAsync () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       declarations: [ AdminLayoutComponent ]
