@@ -18,10 +18,10 @@ export class LabelValidationDirective implements AfterViewInit {
   private readonly defaultLanguage = 'en';
   private title = {
     'not-required': {en: '', cn: ''},
-    'required': {en: ' *', cn: ' *'},
-    'min': {en: ' (Minimum _unit_ units)', cn: ' (最低限度 _unit_ 碼)'},
+    required: {en: ' *', cn: ' *'},
+    min: {en: ' (Minimum _unit_ units)', cn: ' (最低限度 _unit_ 碼)'},
     'required-min': {en: ' *(Minimum _unit_ units)', cn: ' *(最低限度 _unit_ 碼)'},
-    'max': {en: ' (Maximum _unit_ units)', cn: ' (最大值 _unit_ 碼)'},
+    max: {en: ' (Maximum _unit_ units)', cn: ' (最大值 _unit_ 碼)'},
     'required-max': {en: ' *(Maximum _unit_ units)', cn: ' *(最大值 _unit_ 碼)'},
     'min-max': {en: ' (_min-unit_ ~ _max-unit_ units)', cn: ' (_min-unit_ ~ _max-unit_ 碼)'},
     'required-min-max': {en: ' *(_min-unit_ ~ _max-unit_ units)', cn: ' *(_min-unit_ ~ _max-unit_ 碼)'},
@@ -57,32 +57,32 @@ export class LabelValidationDirective implements AfterViewInit {
     }, 55);*/
   }
 
-  getTranslatedLabel(field: string) {
+  getTranslatedLabel(field: string): any {
     /*return new Promise((resolve: any) => {
         this.translate.get(field).toPromise().then((data: string) => resolve(data));
     });*/
   }
 
-  getStaticTranslatedLabel(field: string, min: number = null, max: number = null) {
-    let string = this.title[field][this.defaultLanguage];
+  getStaticTranslatedLabel(field: string, min: number = null, max: number = null): string {
+    let value = this.title[field][this.defaultLanguage];
     switch (field) {
       case 'min':
-        string = string.replace('_unit_', min);
+        value = value.replace('_unit_', min);
         break;
       case 'max':
-        string = string.replace('_unit_', max);
+        value = value.replace('_unit_', max);
         break;
       case 'required-min':
-        string = string.replace('_unit_', min);
+        value = value.replace('_unit_', min);
         break;
       case 'required-max':
-        string = string.replace('_unit_', max);
+        value = value.replace('_unit_', max);
         break;
       case 'required-min-max':
-        string = string.replace('_min-unit_', min).replace('_max-unit_', max);
+        value = value.replace('_min-unit_', min).replace('_max-unit_', max);
         break;
     }
-    return string;
+    return value;
   }
 
   getControlName(c: AbstractControl): string | null {
@@ -90,7 +90,7 @@ export class LabelValidationDirective implements AfterViewInit {
     return Object.keys(formGroup).find((name: any) => c === formGroup[name]).replace('_', '-').toUpperCase() || null;
   }
 
-  hasValidator() {
+  hasValidator(): void {
     const lastValue: any = this.control.value;
     const validators = ['required', 'pattern', 'minlength', 'maxlength', 'email'];
     validators.forEach((validator: string) => {
@@ -98,30 +98,32 @@ export class LabelValidationDirective implements AfterViewInit {
       switch (validator) {
         case 'required':
           this.control.setValue('');
-          this.hasRequired = this.control.errors != null ? this.control.errors.required == true : false;
+          this.hasRequired = this.control.errors != null ? this.control.errors.required === true : false;
           break;
         case 'minlength':
           this.control.setValue('0');
-          this.hasMinLength = this.control.errors != null ? this.control.errors['minlength'] != undefined : false;
+          this.hasMinLength = this.control.errors != null ? this.control.errors.minlength !== undefined : false;
           if (this.hasMinLength) {
-            this.minLength = this.control.errors['minlength'] == undefined
+            this.minLength = this.control.errors.minlength === undefined
               ? 0
-              : this.control.errors['minlength']['requiredLength'];
+              : this.control.errors.minlength.requiredLength;
           }
           break;
         case 'maxlength':
           this.control.setValue('00000000000000000000000000000000000000');
-          this.hasMaxLength = this.control.errors != null ? this.control.errors['maxlength'] != undefined : false;
+          this.hasMaxLength = this.control.errors != null ? this.control.errors.maxlength !== undefined : false;
           if (this.hasMaxLength) {
-            this.maxLength = this.control.errors['maxlength'] == undefined
+            this.maxLength = this.control.errors.maxlength === undefined
               ? 0
-              : this.control.errors['maxlength']['requiredLength'];
+              : this.control.errors.maxlength.requiredLength;
           }
           break;
         case 'email':
           this.control.setValue(' ');
-          this.hasEmail = this.control.errors != null ? this.control.errors['email'] != undefined : false;
-          this.hasEmail ? this.hasMinLength = this.hasMaxLength = false : false;
+          this.hasEmail = this.control.errors != null ? this.control.errors.email !== undefined : false;
+          if (this.hasEmail) {
+            this.hasMinLength = this.hasMaxLength = false;
+          }
           break;
       }
     });

@@ -111,8 +111,7 @@
               "e2e/tsconfig.json"
             ],
             "exclude": [
-              "**/node_modules/**",
-              "**/src/app/shared/**"
+              "**/node_modules/**"
             ]
           }
         },

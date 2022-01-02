@@ -4,13 +4,13 @@ import {Directive, ElementRef} from '@angular/core';
   selector: '[appShowPassword]'
 })
 export class ShowPasswordDirective {
-  private _shown = false;
+  private shown = false;
 
   constructor(private element: ElementRef) {
     this.setup();
   }
 
-  setup() {
+  setup(): void {
     const parent = this.element.nativeElement.parentNode;
     setTimeout(() => {
       const span = parent.querySelector('.input-group-append .input-group-text');
@@ -19,9 +19,9 @@ export class ShowPasswordDirective {
     }, 550);
   }
 
-  toggle(span: HTMLElement) {
-    this._shown = !this._shown;
-    if (this._shown) {
+  toggle(span: HTMLElement): void {
+    this.shown = !this.shown;
+    if (this.shown) {
       this.element.nativeElement.setAttribute('type', 'text');
       span.innerHTML = '<i class="fa fa-eye"></i>';
     } else {

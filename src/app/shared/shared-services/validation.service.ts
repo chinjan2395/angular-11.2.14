@@ -11,7 +11,9 @@ export class ValidationService {
   }
 
   static blankSpaceValidator(reg: string | null = null): ValidatorFn {
-    const match: RegExp = reg == null ? /^([^\s])([\s[a-zA-Z\u4E00-\u9FFF\u3400-\u4DFF\uF900-\uFAFF0-9_@./#&+-]*)([^\s])$/ : new RegExp(reg);
+    const match: RegExp = reg == null
+      ? /^([^\s])([\s[a-zA-Z\u4E00-\u9FFF\u3400-\u4DFF\uF900-\uFAFF0-9_@./#&+-]*)([^\s])$/
+      : new RegExp(reg);
     return (control: AbstractControl): { [key: string]: any } | null => {
       control.markAsDirty();
       const NUMBER_REGEXP = new RegExp(match);
@@ -93,7 +95,7 @@ export class ValidationService {
           forbidden.push(regExp.source);
         }
       });
-      return forbidden.length > 0 ? {customPattern: {forbidden: forbidden}} : null;
+      return forbidden.length > 0 ? {customPattern: {forbidden}} : null;
     };
   }
 
@@ -127,7 +129,7 @@ export class ValidationService {
     };
   }
 
-  static validateAreEqual(controlName: string, matchingControlName: any) {
+  static validateAreEqual(controlName: string, matchingControlName: any): (formGroup: FormGroup) => void {
     return (formGroup: FormGroup) => {
       let error = null;
       const control = formGroup.get(controlName);
@@ -141,7 +143,8 @@ export class ValidationService {
     };
   }
 
-  static validateOperation(controlName: string, matchingControlNames: any, operationType: string = 'equal') {
+  static validateOperation(controlName: string, matchingControlNames: any, operationType: string = 'equal')
+    : (formGroup: FormGroup) => void {
     let errorType: string;
     switch (operationType) {
       case 'equal':
@@ -165,7 +168,7 @@ export class ValidationService {
       let result = true;
       switch (condition) {
         case 'equal':
-          result = secondValue == firstValue;
+          result = secondValue === firstValue;
           break;
         case 'less-than':
           result = secondValue < firstValue;
@@ -197,7 +200,7 @@ export class ValidationService {
               if (errors.customPattern) {
                 errors.customPattern[errorType] = [];
               } else {
-                errors['customPattern'] = {[errorType]: []};
+                errors.customPattern = {[errorType]: []};
               }
             }
             errors.customPattern[errorType].push(matchingControlNames);
@@ -210,18 +213,18 @@ export class ValidationService {
           matchingControlNames.forEach((matchingControlName: string, index: number) => {
             const matchingControlArray = formGroup.get(matchingControlName);
             if (operation(operationType, control.value, matchingControlArray.value)) {
-              if (index == 0) {
+              if (index === 0) {
                 if (errors == null) {
                   errors = {customPattern: {[errorType]: []}};
                 } else {
                   if (errors.customPattern) {
                     errors.customPattern[errorType] = [];
                   } else {
-                    errors['customPattern'] = {[errorType]: []};
+                    errors.customPattern = {[errorType]: []};
                   }
                 }
               }
-              errors.customPattern[errorType] != undefined
+              errors.customPattern[errorType] !== undefined
                 ? errors.customPattern[errorType].push(matchingControlName)
                 : errors.customPattern[errorType] = [matchingControlName];
             }
@@ -252,7 +255,8 @@ export class ValidationService {
     };
   }
 
-  static ipValidator(reg: string = '^(?=\\d+\\.\\d+\\.\\d+\\.\\d+$)(?:(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]|[0-9])\\.?){4}$'): ValidatorFn {
+  static ipValidator(reg: string = '^(?=\\d+\\.\\d+\\.\\d+\\.\\d+$)(?:(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]|[0-9])\\.?){4}$')
+    : ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
       control.markAsDirty();
       const NUMBER_REGEXP = new RegExp(reg);

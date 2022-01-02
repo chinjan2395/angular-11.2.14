@@ -7,7 +7,7 @@ import * as moment from 'moment';
   providers: [DatePipe]
 })
 export class DateFormatDirective implements AfterViewInit {
-  @Input() object: Object;
+  @Input() object: any;
   @Input() dateField: string;
   @Input() userField: string;
   dateTimeFormat;
@@ -24,11 +24,11 @@ export class DateFormatDirective implements AfterViewInit {
     );
   }
 
-  isNull(field: string) {
+  isNull(field: string): string {
     return field == null ? '' : field;
   }
 
-  isDate(field: string) {
+  isDate(field: string): string {
     const date = moment(field);
     return date.isValid() ? this.datePipe.transform(field, this.dateTimeFormat, '+000') : '';
   }

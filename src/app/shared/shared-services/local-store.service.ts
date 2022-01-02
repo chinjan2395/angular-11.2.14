@@ -10,13 +10,13 @@ export class LocalStoreService {
   constructor() {
   }
 
-  public setItem(key, value) {
+  public setItem(key, value): boolean {
     value = JSON.stringify(value);
     this.ls.setItem(key, value);
     return true;
   }
 
-  public getItem(key) {
+  public getItem(key): any {
     const value = this.ls.getItem(key);
     try {
       return JSON.parse(value);
@@ -26,7 +26,7 @@ export class LocalStoreService {
     }
   }
 
-  public clear() {
+  public clear(): void {
     this.ls.clear();
   }
 }

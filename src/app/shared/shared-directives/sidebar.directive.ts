@@ -51,10 +51,10 @@ export class SidebarContentDirective {
 })
 export class SidebarDirective implements OnInit {
 
-  @Input('align') public align: 'left' | 'right' = 'left';
-  @Input('mode') public mode: 'over' | 'side' = 'side';
-  @Input('appSidebar') id: string;
-  @Input('closed') closed: boolean;
+  @Input() public align: 'left' | 'right' = 'left';
+  @Input() public mode: 'over' | 'side' = 'side';
+  @Input() id: string;
+  @Input() closed: boolean;
 
   public width;
   public nativeEl: any;
@@ -72,18 +72,18 @@ export class SidebarDirective implements OnInit {
     this.nativeEl.className += ' sidebar';
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.width = this.el.nativeElement.offsetWidth + 'px';
     this.sidenavHelperService.setSidenav(this.id, this);
     this.initSidebar();
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
+  onResize(event): void {
     this.initSidebar();
   }
 
-  open() {
+  open(): void {
     if (this.align === 'left') {
       this.nativeEl.style.left = 0;
       if (!Utils.isMobile()) {
@@ -98,7 +98,7 @@ export class SidebarDirective implements OnInit {
     this.closed = false;
   }
 
-  close() {
+  close(): void {
     if (this.align === 'left') {
       this.nativeEl.style.left = '-' + this.width;
       this.contentNativeEl.style.marginLeft = 0;
@@ -109,7 +109,7 @@ export class SidebarDirective implements OnInit {
     this.closed = true;
   }
 
-  toggle() {
+  toggle(): void {
     if (this.closed) {
       this.open();
     } else {
@@ -117,7 +117,7 @@ export class SidebarDirective implements OnInit {
     }
   }
 
-  private initSidebar() {
+  private initSidebar(): void {
     this.closed = Utils.isMobile();
     if (this.closed) {
       this.close();
@@ -141,7 +141,7 @@ export class SidebarTogglerDirective {
   }
 
   @HostListener('click')
-  onClick() {
+  onClick(): void {
     this.sidenavHelperService.getSidenav(this.id).toggle();
   }
 }
