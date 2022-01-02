@@ -7,22 +7,22 @@ import {LabelValidationDirective} from './label-validation.directive';
 import {ShowPasswordDirective} from './show-password.directive';
 
 const directives = [
-    SidebarDirective,
-    SidebarContainerDirective,
-    SidebarContentDirective,
-    SidebarTogglerDirective,
-    DateFormatDirective,
-    EmptyDirective,
-    LabelValidationDirective,
-    ShowPasswordDirective
+  SidebarDirective,
+  SidebarContainerDirective,
+  SidebarContentDirective,
+  SidebarTogglerDirective,
+  DateFormatDirective,
+  EmptyDirective,
+  LabelValidationDirective,
+  ShowPasswordDirective
 ];
 
 @NgModule({
-    imports: [
-        CommonModule
-    ],
-    declarations: directives,
-    exports: directives
+  imports: [
+    CommonModule
+  ],
+  declarations: directives,
+  exports: directives
 })
 export class SharedDirectivesModule {
 }

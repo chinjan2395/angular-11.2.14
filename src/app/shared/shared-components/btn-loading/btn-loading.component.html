@@ -1,7 +1,7 @@
-<button class="btn {{btnClass}}" [type]="type" [disabled]="loading" [ngClass]="{loading: loading}">
-    <div class="btn-spinner float-left" *ngIf="loading"></div>
-    <span *ngIf="!loading">
+<button [disabled]="loading" [ngClass]="{loading: loading}" [type]="type" class="btn {{btnClass}}">
+  <div *ngIf="loading" class="btn-spinner float-left"></div>
+  <span *ngIf="!loading">
     <ng-content></ng-content>
   </span>
-    <span *ngIf="loading">{{loadingText}}</span>
+  <span *ngIf="loading">{{loadingText}}</span>
 </button>

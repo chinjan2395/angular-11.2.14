@@ -83,15 +83,6 @@ export class SidebarDirective implements OnInit {
     this.initSidebar();
   }
 
-  private initSidebar() {
-    this.closed = Utils.isMobile();
-    if (this.closed) {
-      this.close();
-    } else {
-      this.open();
-    }
-  }
-
   open() {
     if (this.align === 'left') {
       this.nativeEl.style.left = 0;
@@ -123,6 +114,15 @@ export class SidebarDirective implements OnInit {
       this.open();
     } else {
       this.close();
+    }
+  }
+
+  private initSidebar() {
+    this.closed = Utils.isMobile();
+    if (this.closed) {
+      this.close();
+    } else {
+      this.open();
     }
   }
 

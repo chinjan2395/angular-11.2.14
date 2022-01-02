@@ -1,14 +1,14 @@
 <ul *ngIf="submitted && control?.errors" class="invalid-feedback">
-    <li *ngIf="control?.errors?.required">
-        Field is required
-    </li>
-    <li *ngIf="control?.errors?.pattern">
-        Must not contain symbol, space, digit or any special character
-    </li>
-    <li *ngIf="control?.errors?.minlength">
-        Minimum {{control?.errors?.minlength?.requiredLength}} letter/digit required
-    </li>
-    <li *ngIf="control?.errors?.maxlength">
-        Maximum {{control?.errors?.maxlength?.requiredLength}} letter/digit allowed
-    </li>
+  <li *ngIf="control?.errors?.required">
+    Field is required
+  </li>
+  <li *ngIf="control?.errors?.pattern">
+    Must not contain symbol, space, digit or any special character
+  </li>
+  <li *ngIf="control?.errors?.minlength">
+    Minimum {{control?.errors?.minlength?.requiredLength}} letter/digit required
+  </li>
+  <li *ngIf="control?.errors?.maxlength">
+    Maximum {{control?.errors?.maxlength?.requiredLength}} letter/digit allowed
+  </li>
 </ul>

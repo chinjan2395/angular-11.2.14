@@ -1,9 +1,11 @@
 button {
   position: relative;
   transition: all .15s ease-in-out;
+
   &.loading {
     padding-left: 36px;
   }
+
   .btn-spinner {
     position: absolute;
     top: 0;
