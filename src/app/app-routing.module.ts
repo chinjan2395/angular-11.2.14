@@ -27,7 +27,7 @@ const routes: Routes = [
     children: [
       {
         path: 'others',
-        loadChildren: './views/others/others.module#OthersModule'
+        loadChildren: () => import('./views/others/others.module').then(m => m.OthersModule)
       }
     ]
   },
@@ -38,7 +38,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'others/404'
+    redirectTo: 'others/404',
   }
 ];
 
