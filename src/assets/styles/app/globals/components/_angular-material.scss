@@ -1,0 +1,64 @@
+
+.filter-option > .mat-pseudo-checkbox {
+  display: none !important;
+}
+
+.filter-sidenav .mat-list-item-content {
+  padding: 0 10px !important;
+  font-size: 0.875rem !important;
+}
+
+.filter-sidenav .mat-select-trigger {
+  font-size: 1rem !important;
+}
+
+.mat-optgroup-label {
+  margin-bottom: 0;
+}
+
+.mat-option-multiple > .mat-pseudo-checkbox {
+  border: 3px solid;
+}
+
+.mat-expansion-panel:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0 !important;
+}
+
+.mat-form-field-infix {
+  border-top: 0 solid transparent !important;
+}
+
+.mat-form-field-underline {
+  display: none !important;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+.mat-error {
+  color: #df0029 !important;
+}
+
+.mat-option {
+  font-size: 12px !important;
+}
+
+.mat-tab-label, .mat-tab-label-active {
+  height: 38px !important;
+  min-width: 110px !important;
+  padding: 3px !important;
+  margin: 3px !important;
+}
+
+.mat-cell {
+  font-size: 0.813rem;
+}
+
+.mat-auto-complete.invalid-mat-feedback {
+  margin-top: -10px;
+}

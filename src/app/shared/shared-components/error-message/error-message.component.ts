@@ -8,6 +8,7 @@ import {AbstractControl, FormControl} from '@angular/forms';
 })
 export class ErrorMessageComponent {
   @Input() submitted = false;
+  @Input() message = '';
   @Input() control: AbstractControl = new FormControl();
 
   constructor() {
