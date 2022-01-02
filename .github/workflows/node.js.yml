@@ -30,5 +30,9 @@ jobs:
     - run: npm install -g @aws-amplify/cli
     - run: amplify init --appId dhe5c6gw1rdjs --envName dev
     - run: amplify pull
-    - run: npm run build --if-present
-    - run: npm test
+    - run: cd src
+    - run: ls
+     - run: cd app
+     - run: ls
+#    - run: npm run build --if-present
+#    - run: npm test
