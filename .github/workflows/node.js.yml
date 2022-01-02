@@ -32,7 +32,7 @@ jobs:
     - run: amplify pull
     - run: cd src
     - run: ls
-     - run: cd app
-     - run: ls
+    - run: cd app
+    - run: ls
 #    - run: npm run build --if-present
 #    - run: npm test
