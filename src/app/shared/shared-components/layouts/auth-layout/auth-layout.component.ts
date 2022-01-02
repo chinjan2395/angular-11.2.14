@@ -8,8 +8,12 @@ import {Router} from '@angular/router';
 })
 export class AuthLayoutComponent {
 
-  constructor(router: Router) {
-    router.navigate(['sessions', 'sign-in']).then(() => console.log('navigating to sign in page'));
+  constructor(private router: Router) {
+    this.navigate().then();
+  }
+
+  async navigate(): Promise<any> {
+    await this.router.navigate(['sessions', 'sign-in-1']);
   }
 
 }
