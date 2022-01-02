@@ -11,7 +11,7 @@ describe('SignUpComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, ReactiveFormsModule, RouterTestingModule],
+      imports: [BrowserAnimationsModule, ReactiveFormsModule],
       declarations: [SignUpComponent]
     })
       .compileComponents();
