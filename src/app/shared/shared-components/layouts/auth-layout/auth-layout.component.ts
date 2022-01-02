@@ -13,7 +13,7 @@ export class AuthLayoutComponent {
   }
 
   async navigate(): Promise<any> {
-    await this.router.navigate(['sessions', 'sign-in-1']);
+    await this.router.navigate(['sessions', 'sign-in']);
   }
 
 }

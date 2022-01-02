@@ -6,6 +6,8 @@ import {Router} from '@angular/router';
 import {SignInComponent} from '../../../../views/sessions/sign-in/sign-in.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {SignUpComponent} from '../../../../views/sessions/sign-up/sign-up.component';
+import {ForgotComponent} from '../../../../views/sessions/forgot/forgot.component';
 
 fdescribe('AuthLayoutComponent', () => {
   let component: AuthLayoutComponent;
@@ -19,6 +21,14 @@ fdescribe('AuthLayoutComponent', () => {
           {
             path: 'sessions/sign-in',
             component: SignInComponent
+          },
+          {
+            path: 'sessions/sign-up',
+            component: SignUpComponent
+          },
+          {
+            path: 'sessions/forgot',
+            component: ForgotComponent
           }
         ]),
         ReactiveFormsModule,
