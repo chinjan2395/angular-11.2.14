@@ -4,6 +4,7 @@ import {SignUpComponent} from './sign-up.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {SharedModule} from '../../../shared/shared.module';
 
 describe('SignUpComponent', () => {
   let component: SignUpComponent;
@@ -11,7 +12,7 @@ describe('SignUpComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, ReactiveFormsModule],
+      imports: [BrowserAnimationsModule, ReactiveFormsModule, RouterTestingModule, SharedModule],
       declarations: [SignUpComponent]
     })
       .compileComponents();

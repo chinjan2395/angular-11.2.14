@@ -5,6 +5,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {SharedModule} from '../../../shared/shared.module';
 
 fdescribe('SignInComponent', () => {
   let component: SignInComponent;
@@ -12,7 +13,7 @@ fdescribe('SignInComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, ReactiveFormsModule, RouterTestingModule, MatSnackBarModule],
+      imports: [BrowserAnimationsModule, ReactiveFormsModule, RouterTestingModule, SharedModule],
       declarations: [SignInComponent]
     })
       .compileComponents();
