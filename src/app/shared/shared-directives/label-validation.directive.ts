@@ -27,7 +27,7 @@ export class LabelValidationDirective implements AfterViewInit {
     minLength = 0;
     maxLength = 0;
 
-    constructor(private _el: ElementRef, private renderer: Renderer2) {
+    constructor(private el: ElementRef, private renderer: Renderer2) {
         this.defaultLanguage = 'en';
     }
 
@@ -36,7 +36,7 @@ export class LabelValidationDirective implements AfterViewInit {
         /*setTimeout(() => {
             this.getTranslatedLabel(this.lang + this.label.toUpperCase()).then((translatedLabel: string) => {
                 let innerHTML = '';
-                this.renderer.setProperty(this._el.nativeElement, 'innerHTML', translatedLabel);
+                this.renderer.setProperty(this.el.nativeElement, 'innerHTML', translatedLabel);
                 if (this.hasRequired && this.hasMinLength && this.hasMaxLength) {
                     innerHTML = this.getStaticTranslatedLabel('required-min-max', this.minLength, this.maxLength);
                 } else if (this.hasRequired && this.hasMinLength) {
@@ -52,7 +52,7 @@ export class LabelValidationDirective implements AfterViewInit {
                 } else if (!this.hasRequired) {
                     innerHTML = this.getStaticTranslatedLabel('not-required');
                 }
-                this._el.nativeElement.insertAdjacentHTML('beforeend', '<span class="text-sm">' + innerHTML + '</span>');
+                this.el.nativeElement.insertAdjacentHTML('beforeend', '<span class="text-sm">' + innerHTML + '</span>');
             });
         }, 55);*/
     }

@@ -6,15 +6,15 @@ import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 export class EmptyDirective implements AfterViewInit {
   @Input() emptyValue = '&nbsp;';
 
-  constructor(private _el: ElementRef) {
+  constructor(private el: ElementRef) {
   }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-      const field = this._el.nativeElement.innerHTML;
+      const field = this.el.nativeElement.innerHTML;
       const isEmpty = this.isNull(field);
       const innerHTML = isEmpty == this.emptyValue ? `<span class="text-black-50">` + isEmpty + `</span>` : '';
-      this._el.nativeElement.insertAdjacentHTML('beforeend', innerHTML);
+      this.el.nativeElement.insertAdjacentHTML('beforeend', innerHTML);
     }, 1450);
   }
 

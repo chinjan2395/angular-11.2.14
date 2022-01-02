@@ -1,6 +1,9 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ForgotComponent} from './forgot.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {RouterTestingModule} from '@angular/router/testing';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('ForgotComponent', () => {
     let component: ForgotComponent;
@@ -8,7 +11,8 @@ describe('ForgotComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ForgotComponent]
+          imports: [BrowserAnimationsModule, ReactiveFormsModule, RouterTestingModule],
+          declarations: [ForgotComponent]
         })
             .compileComponents();
     }));
