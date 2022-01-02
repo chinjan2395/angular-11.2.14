@@ -11,7 +11,7 @@
                class="form-group">
             <label>USERNAME</label>
             <input class="form-control" formControlName="username" id="username">
-            <app-error-message [control]="signInForm.controls.username" [lang]="errorPrefix"
+            <app-error-message [control]="signInForm.controls.username"
                                [message]="'USERNAME'" [submitted]="submitted"></app-error-message>
           </div>
           <div [ngClass]="{'has-error': signInForm.controls.password.invalid}"
@@ -24,7 +24,7 @@
                 <span class="input-group-text"><i class="fa fa-eye-slash"></i></span>
               </div>
             </div>
-            <app-error-message [control]="signInForm.controls.password" [lang]="errorPrefix"
+            <app-error-message [control]="signInForm.controls.password"
                                [message]="'PASSWORD'" [submitted]="submitted"></app-error-message>
           </div>
           <btn-loading [loadingText]="loadingText" [loading]="loading"

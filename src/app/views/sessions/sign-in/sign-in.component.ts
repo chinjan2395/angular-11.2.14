@@ -12,8 +12,6 @@ import {LocalStoreService} from '../../../shared/shared-services/local-store.ser
   animations: [SharedAnimations]
 })
 export class SignInComponent implements OnInit {
-  prefix = 'SESSION.';
-  errorPrefix = this.prefix + 'MESSAGE.ERROR';
   loading: boolean;
   loadingText: string;
   signInForm: FormGroup;
