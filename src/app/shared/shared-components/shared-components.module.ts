@@ -9,6 +9,7 @@ import {AuthLayoutComponent} from './layouts/auth-layout/auth-layout.component';
 import {BlankLayoutComponent} from './layouts/blank-layout/blank-layout.component';
 import {BtnLoadingComponent} from './btn-loading/btn-loading.component';
 import {InheritedSnackBarComponent} from './inherited-snack-bar/inherited-snack-bar.component';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 
 const components = [
   ErrorMessageComponent,
@@ -24,7 +25,8 @@ const components = [
     CommonModule,
     RouterModule,
     MatSnackBarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatBottomSheetModule
   ],
   declarations: components,
   exports: components,

@@ -8,6 +8,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {SignUpComponent} from '../../../../views/sessions/sign-up/sign-up.component';
 import {ForgotComponent} from '../../../../views/sessions/forgot/forgot.component';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 
 fdescribe('AuthLayoutComponent', () => {
   let component: AuthLayoutComponent;
@@ -32,7 +33,8 @@ fdescribe('AuthLayoutComponent', () => {
           }
         ]),
         ReactiveFormsModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatBottomSheetModule
       ],
       declarations: [AuthLayoutComponent]
     })
