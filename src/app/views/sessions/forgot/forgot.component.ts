@@ -2,7 +2,7 @@ import {Component, Inject} from '@angular/core';
 import {SharedAnimations} from '../../../shared/shared-animations/shared-animations';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ValidationService} from '../../../shared/shared-services/validation.service';
-import {MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
+import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import {AmplifyAuthService} from '../../../shared/shared-services/amplify-auth.service';
 import {Router} from '@angular/router';
 import {InheritedSnackBarComponent, Theme} from '../../../shared/shared-components/inherited-snack-bar/inherited-snack-bar.component';
@@ -24,6 +24,7 @@ export class ForgotComponent {
   receivedAuthentication;
 
   constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public data,
+              private bottomSheet: MatBottomSheetRef,
               private formBuilder: FormBuilder,
               private amplifyAuth: AmplifyAuthService,
               private snackBar: MatSnackBar,
@@ -87,6 +88,9 @@ export class ForgotComponent {
       this.amplifyAuth.forgotPasswordSubmit(username, code, password)
         .then(response => {
           console.log('forgotPasswordSubmit submit response', response);
+          if (this.data?.other) {
+            this.bottomSheet.dismiss();
+          }
           this.router.navigate(['/', 'sessions', 'sign-in']);
         })
         .catch(error => console.log('forgotPasswordSubmit error', error))
