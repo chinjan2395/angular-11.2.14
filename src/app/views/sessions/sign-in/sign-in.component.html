@@ -27,10 +27,18 @@
             <app-error-message [control]="signInForm.controls.password"
                                [controlName]="'password'" [submitted]="submitted"></app-error-message>
           </div>
-          <btn-loading [loadingText]="loadingText" [loading]="loading"
-                       btnClass="btn-primary btn-rounded btn-block mt-3">Sign In
+          <btn-loading [loadingText]="loadingText" [loading]="loading" [btnClass]="'btn-primary btn-rounded btn-block mt-3'">
+            Sign In
           </btn-loading>
         </form>
+        <div class="mt-3">
+          <btn-loading [loadingText]="'Sign Up'" [loading]="false"
+                       [btnClass]="'btn btn-rounded btn-outline-primary btn-outline-email btn-block btn-icon-text'"
+                       [routerLink]="['/','sessions','sign-up']">Sign Up</btn-loading>
+          <btn-loading [loadingText]="'Forgot Password'" [loading]="false"
+                       [btnClass]="'btn btn-rounded btn-outline-primary btn-outline-email btn-block btn-icon-text mt-2'"
+                       [routerLink]="['/','sessions','forgot']">Forgot Password</btn-loading>
+        </div>
       </div>
     </div>
   </div>

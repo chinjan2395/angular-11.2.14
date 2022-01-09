@@ -36,7 +36,6 @@ fdescribe('SignInComponent', () => {
     expect(component.loadingText).toBeUndefined();
     expect(component.signInForm).toBeInstanceOf(FormGroup);
     expect(component.submitted).toBeFalse();
-    expect(component.url).toBe('/sessions/sign-in');
   });
 
   it('should initialize form group', () => {
@@ -60,14 +59,8 @@ fdescribe('SignInComponent', () => {
     expect(component.signInForm.valid).toBeFalse();
 
     component.signInForm.patchValue({
-      username: 'chinjan',
+      username: 'chi',
       password: 'chinjan'
-    });
-    expect(component.signInForm.valid).toBeFalse();
-
-    component.signInForm.patchValue({
-      username: 'john-doe',
-      password: 'test'
     });
     expect(component.signInForm.valid).toBeFalse();
   });
