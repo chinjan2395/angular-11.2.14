@@ -43,11 +43,11 @@ export class SignInComponent implements OnInit {
     });
 
     this.signInForm = this.formBuilder.group({
-      username: ['lukkuromle', [
+      username: ['', [
         Validators.required,
         Validators.minLength(4)
       ]],
-      password: ['Lukkuromle@123', [
+      password: ['', [
         Validators.required
       ]]
     });
