@@ -3,6 +3,7 @@ import {MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ValidationService} from '../../../shared/shared-services/validation.service';
 import {AmplifyAuthService} from '../../../shared/shared-services/amplify-auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-complete-password',
@@ -18,6 +19,7 @@ export class CompletePasswordComponent {
 
   constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public data,
               private formBuilder: FormBuilder,
+              private router: Router,
               private amplifyAuth: AmplifyAuthService) {
     this.loadingText = 'Set new password';
     this.form = this.formBuilder.group({
@@ -39,12 +41,8 @@ export class CompletePasswordComponent {
     if (this.form.valid) {
       const {name, password} = this.form.value;
       this.amplifyAuth.completeNewPassword(this.data, password, {name})
-        .then(response => {
-          console.log('CompletePasswordComponent submit response', response);
-        })
-        .catch(error => {
-          console.log('CompletePasswordComponent error', error);
-        })
+        .then(() => this.router.navigate(['/']))
+        .catch(error => console.log('CompletePasswordComponent error', error))
         .finally(() => this.loading = false);
     } else {
       this.loading = false;
