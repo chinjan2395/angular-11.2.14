@@ -62,8 +62,7 @@ export class SignInComponent implements OnInit {
       this.amplifyAuth.signIn(username, password)
         .then(response => {
           console.log('SignInComponent response', response);
-          if (response?.username) {
-            this.ls.setItem('username', response.getUsername());
+          if (!response?.challengeName) {
             response.getUserData((error, getUserData) => {
               const userAttributes = getUserData.UserAttributes;
               userAttributes.map((UserAttributes, index) => {
@@ -75,6 +74,7 @@ export class SignInComponent implements OnInit {
               this.ls.setItem('refreshToken',  getSession.getRefreshToken());
               this.ls.setItem('accessToken', getSession.getAccessToken());
             });
+            this.ls.setItem('username', response.getUsername());
             this.router.navigate(['/']);
           } else {
             this.bottomSheet.open(CompletePasswordComponent, {

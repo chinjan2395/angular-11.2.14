@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
+import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ValidationService} from '../../../shared/shared-services/validation.service';
 import {AmplifyAuthService} from '../../../shared/shared-services/amplify-auth.service';
@@ -18,6 +18,7 @@ export class CompletePasswordComponent {
   url = '/sessions/sign-in';
 
   constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public data,
+              private bottomSheet: MatBottomSheetRef,
               private formBuilder: FormBuilder,
               private router: Router,
               private amplifyAuth: AmplifyAuthService) {
@@ -41,7 +42,12 @@ export class CompletePasswordComponent {
     if (this.form.valid) {
       const {name, password} = this.form.value;
       this.amplifyAuth.completeNewPassword(this.data, password, {name})
-        .then(() => this.router.navigate(['/']))
+        .then(() => {
+          if (this.data) {
+            this.bottomSheet.dismiss();
+          }
+          this.router.navigate(['/']);
+        })
         .catch(error => console.log('CompletePasswordComponent error', error))
         .finally(() => this.loading = false);
     } else {
