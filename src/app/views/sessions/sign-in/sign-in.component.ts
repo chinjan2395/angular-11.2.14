@@ -63,19 +63,7 @@ export class SignInComponent implements OnInit {
         .then(response => {
           console.log('SignInComponent response', response);
           if (!response?.challengeName) {
-            response.getUserData((error, getUserData) => {
-              const userAttributes = getUserData.UserAttributes;
-              userAttributes.map((UserAttributes, index) => {
-                this.ls.setItem(UserAttributes.Name, UserAttributes.Value);
-              });
-            });
-            response.getSession((error, getSession) => {
-              this.ls.setItem('idToken', getSession.getIdToken());
-              this.ls.setItem('refreshToken',  getSession.getRefreshToken());
-              this.ls.setItem('accessToken', getSession.getAccessToken());
-            });
-            this.ls.setItem('username', response.getUsername());
-            this.router.navigate(['/']);
+            this.setSession(response);
           } else {
             this.bottomSheet.open(CompletePasswordComponent, {
               data: response
@@ -95,5 +83,21 @@ export class SignInComponent implements OnInit {
     } else {
       this.loading = false;
     }
+  }
+
+ async setSession(response): Promise<any> {
+    response.getUserData((error, getUserData) => {
+      const userAttributes = getUserData.UserAttributes;
+      userAttributes.map((UserAttributes, index) => {
+        this.ls.setItem(UserAttributes.Name, UserAttributes.Value);
+      });
+    });
+    response.getSession((error, getSession) => {
+      this.ls.setItem('idToken', getSession.getIdToken());
+      this.ls.setItem('refreshToken', getSession.getRefreshToken());
+      this.ls.setItem('accessToken', getSession.getAccessToken());
+    });
+    this.ls.setItem('username', response.getUsername());
+    await this.router.navigate(['/']);
   }
 }
