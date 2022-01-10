@@ -15,7 +15,6 @@ export class CompletePasswordComponent {
   loadingText: string;
   form: FormGroup;
   submitted = false;
-  url = '/sessions/sign-in';
 
   constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public data,
               private bottomSheet: MatBottomSheetRef,
@@ -46,7 +45,6 @@ export class CompletePasswordComponent {
           if (this.data) {
             this.bottomSheet.dismiss();
           }
-          this.router.navigate(['/']);
         })
         .catch(error => console.log('CompletePasswordComponent error', error))
         .finally(() => this.loading = false);

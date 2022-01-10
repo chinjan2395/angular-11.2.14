@@ -10,7 +10,7 @@
         <ng-container *ngIf="initialSubmitted else templateRef">
           <h1 class="mb-3 text-18 text-center">Complete New Password</h1>
           <form (ngSubmit)="submit()" [formGroup]="form">
-            <p class="mb-4 p-2">We have sent an verification code
+            <p *ngIf="!alreadyHasVerificationCode" class="mb-4 p-2">We have sent an verification code
               to {{receivedAuthentication?.CodeDeliveryDetails?.Destination}}.</p>
             <div [ngClass]="{'has-error': form.controls.username.invalid}" class="form-group">
               <label for="username">USERNAME</label>
@@ -38,7 +38,7 @@
                                  [controlName]="'password'" [submitted]="submitted"></app-error-message>
             </div>
             <btn-loading [loadingText]="loadingText" [loading]="loading"
-                         btnClass="btn-primary btn-rounded btn-block mt-3">Sign In
+                         btnClass="btn-primary btn-rounded btn-block mt-3">Set New Password
             </btn-loading>
           </form>
         </ng-container>
@@ -52,8 +52,11 @@
                                  [controlName]="'username'" [submitted]="submitted"></app-error-message>
             </div>
             <btn-loading [loadingText]="loadingText" [loading]="loading"
-                         btnClass="btn-primary btn-rounded btn-block mt-3">Send confirmation code
-            </btn-loading>
+                         btnClass="btn-primary btn-rounded btn-block mt-3">Send confirmation code</btn-loading>
+            <btn-loading [loadingText]="loadingText" [loading]="loading"
+                         (click)="initialSubmitted=true;alreadyHasVerificationCode=true"
+                         btnClass="btn btn-rounded btn-outline-primary btn-outline-email btn-block btn-icon-text mt-2">
+              Already have confirmation code?</btn-loading>
           </form>
         </ng-template>
       </div>

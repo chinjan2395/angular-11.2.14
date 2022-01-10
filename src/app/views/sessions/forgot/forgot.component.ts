@@ -22,6 +22,7 @@ export class ForgotComponent {
   initialSubmitted = false;
   submitted = false;
   receivedAuthentication;
+  alreadyHasVerificationCode = false;
 
   constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public data,
               private bottomSheet: MatBottomSheetRef,
@@ -61,6 +62,7 @@ export class ForgotComponent {
         .catch(error => {
           console.log('Initial forgotPassword error', error);
           if (error.code === 'NotAuthorizedException') {
+            this.bottomSheet.dismiss();
             this.router.navigate(['/', 'sessions', 'sign-in'])
               .then(() => {
                 this.snackBar.openFromComponent(InheritedSnackBarComponent, {
