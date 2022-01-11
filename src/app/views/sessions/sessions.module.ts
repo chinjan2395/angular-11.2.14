@@ -9,6 +9,7 @@ import {SignUpComponent} from './sign-up/sign-up.component';
 import {ForgotComponent} from './forgot/forgot.component';
 import {CompletePasswordComponent} from './complete-password/complete-password.component';
 import {MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
+import {CompleteSignUpComponent} from './complete-sign-up/complete-sign-up.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import {MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
     ReactiveFormsModule,
     SessionsRoutingModule
   ],
-  declarations: [SignUpComponent, SignInComponent, ForgotComponent, CompletePasswordComponent],
+  declarations: [SignUpComponent, SignInComponent, ForgotComponent, CompletePasswordComponent, CompleteSignUpComponent],
   providers: [
     {
       provide: MAT_BOTTOM_SHEET_DATA, useValue: {}

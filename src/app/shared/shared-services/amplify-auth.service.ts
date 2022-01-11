@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Auth} from 'aws-amplify';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {InheritedSnackBarComponent, Theme} from '../shared-components/inherited-snack-bar/inherited-snack-bar.component';
+import {ISignUpResult} from 'amazon-cognito-identity-js';
 
 export interface AuthError {
   code: string;
@@ -117,6 +118,57 @@ export class AmplifyAuthService {
             theme: Theme.ERROR
           }
         });
+      });
+  }
+
+  async signUp(username, password, attributes): Promise<any> {
+    return Auth.signUp({username, password, attributes})
+      .then((response: ISignUpResult) => {
+        return new Promise(resolve => resolve(response));
+      })
+      .catch(error => {
+        const returnResponse = this.AWSBasicError(error, {username});
+        this.snackBar.openFromComponent(InheritedSnackBarComponent, {
+          data: {
+            message: returnResponse.message,
+            theme: Theme.ERROR
+          }
+        });
+        return new Promise((resolve, reject) => reject(returnResponse)) as Promise<AuthError>;
+      });
+  }
+
+  async confirmSignUp(user, password, requiredAttributes?: any): Promise<any> {
+    return Auth.confirmSignUp(user, password, requiredAttributes)
+      .then((response) => {
+        return new Promise((resolve) => resolve(response));
+      })
+      .catch((error) => {
+        this.snackBar.openFromComponent(InheritedSnackBarComponent, {
+          data: {
+            message: error.message,
+            theme: Theme.ERROR
+          }
+        });
+
+        return new Promise((resolve, reject) => reject(error));
+      });
+  }
+
+  async resendSignUp(username): Promise<any> {
+    return Auth.resendSignUp(username)
+      .then((response) => {
+        return new Promise((resolve) => resolve(response));
+      })
+      .catch((error) => {
+        this.snackBar.openFromComponent(InheritedSnackBarComponent, {
+          data: {
+            message: error.message,
+            theme: Theme.ERROR
+          }
+        });
+
+        return new Promise((resolve, reject) => reject(error));
       });
   }
 
