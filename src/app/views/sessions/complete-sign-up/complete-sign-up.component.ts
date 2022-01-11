@@ -41,7 +41,6 @@ export class CompleteSignUpComponent {
       const {username, code, password} = this.form.value;
       this.amplifyAuth.confirmSignUp(username, code, password)
         .then(response => {
-          console.log('CompleteSignUpComponent submit response', response);
           this.bottomSheet.dismiss();
         })
         .catch(error => console.log('CompleteSignUpComponent submit error', error))
