@@ -1,0 +1,24 @@
+<form (ngSubmit)="submit()" [formGroup]="form">
+  <p *ngIf="!alreadyHasVerificationCode" class="mb-4 p-2">We have sent an verification code
+    to {{receivedAuthentication?.CodeDeliveryDetails?.Destination}}.</p>
+  <div [ngClass]="{'has-error': form.controls.username.invalid}" class="form-group">
+    <label for="username">USERNAME</label>
+    <input id="username" label="username" class="form-control" formControlName="username" autocomplete="off">
+    <app-error-message [control]="form.controls.username"
+                       [controlName]="'username'" [submitted]="submitted"></app-error-message>
+  </div>
+  <div [ngClass]="{'has-error': form.controls.code.invalid}" class="form-group">
+    <label for="code">CODE</label>
+    <input id="code" label="code" class="form-control" formControlName="code">
+    <app-error-message [control]="form.controls.code"
+                       [controlName]="'code'" [submitted]="submitted"></app-error-message>
+  </div>
+  <btn-loading [loadingText]="loadingText" [loading]="loading"
+               btnClass="btn-primary btn-rounded btn-block mt-3">Confirm Account
+  </btn-loading>
+</form>
+<div class="mt-3">
+  <btn-loading [loadingText]="partialLoadingText" [loading]="partialLoading"
+               [btnClass]="partialLoadingClass" (click)="resendCC()">Resend confirmation code
+  </btn-loading>
+</div>
