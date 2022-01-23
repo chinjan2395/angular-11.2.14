@@ -10,6 +10,13 @@ import {BlankLayoutComponent} from './layouts/blank-layout/blank-layout.componen
 import {BtnLoadingComponent} from './btn-loading/btn-loading.component';
 import {InheritedSnackBarComponent} from './inherited-snack-bar/inherited-snack-bar.component';
 import {MatBottomSheetModule, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import {HeaderSidebarCompactComponent} from './layouts/admin-layout/header-sidebar-compact/header-sidebar-compact.component';
+import {SidebarCompactComponent} from './layouts/admin-layout/sidebar-compact/sidebar-compact.component';
+import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
+import {SharedPipesModule} from '../shared-pipes/shared-pipes.module';
+import {SearchModule} from './search/search.module';
+import {SharedDirectivesModule} from '../shared-directives/shared-directives.module';
 
 const components = [
   ErrorMessageComponent,
@@ -17,7 +24,9 @@ const components = [
   AdminLayoutComponent,
   BlankLayoutComponent,
   BtnLoadingComponent,
-  InheritedSnackBarComponent
+  InheritedSnackBarComponent,
+  HeaderSidebarCompactComponent,
+  SidebarCompactComponent
 ];
 
 @NgModule({
@@ -26,7 +35,12 @@ const components = [
     RouterModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    NgbDropdownModule,
+    PerfectScrollbarModule,
+    SharedPipesModule,
+    SharedDirectivesModule,
+    SearchModule
   ],
   declarations: components,
   exports: components,
