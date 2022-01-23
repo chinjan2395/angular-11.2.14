@@ -5,6 +5,10 @@ import {DateFormatDirective} from './date-format.directive';
 import {EmptyDirective} from './empty.directive';
 import {LabelValidationDirective} from './label-validation.directive';
 import {ShowPasswordDirective} from './show-password.directive';
+import {AppDropdownDirective} from './dropdown.directive';
+import {FullScreenWindowDirective} from './full-screen.directive';
+import {DropdownLinkDirective} from './dropdown-link.directive';
+import {DropdownAnchorDirective} from './dropdown-anchor.directive';
 
 const directives = [
   SidebarDirective,
@@ -14,7 +18,11 @@ const directives = [
   DateFormatDirective,
   EmptyDirective,
   LabelValidationDirective,
-  ShowPasswordDirective
+  ShowPasswordDirective,
+  AppDropdownDirective,
+  DropdownLinkDirective,
+  DropdownAnchorDirective,
+  FullScreenWindowDirective
 ];
 
 @NgModule({
