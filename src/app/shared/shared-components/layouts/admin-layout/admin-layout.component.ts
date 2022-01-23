@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {NavigationService} from '../../../shared-services/navigation.service';
+import {SearchService} from '../../../shared-services/search.service';
 
 @Component({
   selector: 'app-admin-layout',
@@ -7,7 +9,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AdminLayoutComponent implements OnInit {
 
-  constructor() {
+  constructor(public navService: NavigationService, public searchService: SearchService) {
   }
 
   ngOnInit(): void {

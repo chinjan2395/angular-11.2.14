@@ -1,4 +1,3 @@
-/*
 .app-admin-wrap {
     width: 100%;
 }
@@ -108,10 +107,10 @@
     .childNav {
         list-style: none;
         padding: 0;
-        
+
         li.nav-item {
             display: block;
-            
+
             a {
                 color: $heading;
                 text-transform: capitalize;
@@ -258,4 +257,4 @@
         height: calc(100vh - #{$topbar-height-mobile});
     }
 
-}*/
+}

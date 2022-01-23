@@ -1,0 +1,84 @@
+<div [ngClass]="{open: navService.sidebarState.sidenavOpen}" class="sidebar-left rtl-ps-none" perfectScrollbar>
+    <div class="logo">
+        <img src="assets/images/logo-white.png" alt="">
+    </div>
+    <ul class="navigation-left">
+        <li [ngClass]="{active: item.active, 'd-none': item.is_hide}" (click)="onClickChangeActiveFlag(item)"
+            class="nav-item lvl1"
+            *ngFor="let item of nav">
+            <div class="nav-item-hold" routerLink="{{item.state}}" (click)="closeChildNav()"
+                 *ngIf="item.type === 'link' && item.name != 'PERSONAL-PROFILE'">
+                <i [ngClass]="'nav-icon '+ item.icon "></i>
+                <span class="nav-text" translate>{{item.name}}</span>
+            </div>
+            <ng-container
+                    *ngIf="selectedItem?.name == 'DASHBOARD' || selectedItem?.name == 'PERSONAL-PROFILE';else otherMenu">
+                <div class="nav-item-hold" (click)="selectItem(item)" *ngIf="item.type === 'dropDown'">
+                    <i [ngClass]="'nav-icon '+ item.icon "></i>
+                    <span class="nav-text" translate>{{item.name}}</span>
+                </div>
+            </ng-container>
+            <ng-template #otherMenu>
+                <div class="nav-item-hold" (mouseenter)="selectItem(item)" *ngIf="item.type === 'dropDown'">
+                    <i [ngClass]="'nav-icon '+ item.icon "></i>
+                    <span class="nav-text" translate>{{item.name}}</span>
+                </div>
+            </ng-template>
+            <div class="nav-item-hold" *ngIf="item.type === 'extLink'">
+                <a [href]="item.state" target="_blank">
+                    <i [ngClass]="'nav-icon '+ item.icon "></i>
+                    <span class="nav-text" translate>{{item.name}}</span>
+                </a>
+            </div>
+            <div class="triangle"></div>
+        </li>
+    </ul>
+</div>
+<div [ngClass]="{open: navService.sidebarState.childnavOpen, 'd-none':selectedItem?.name == 'DASHBOARD' || selectedItem?.name == 'PERSONAL-PROFILE'}"
+     class="sidebar-left-secondary rtl-ps-none" perfectScrollbar>
+    <i class="sidebar-close i-Close" (click)="toggleSidebar()"></i>
+    <header>
+        <ng-container *ngIf="translationArray!=undefined">
+            <h6>{{translationArray[selectedItem?.name]?.LABEL}}</h6>
+        </ng-container>
+    </header>
+    <ng-container [ngTemplateOutlet]="menuTemplate"
+                  [ngTemplateOutletContext]="{parentItem: selectedItem}"></ng-container>
+</div>
+<ng-template #menuTemplate let-parentItem="parentItem" let-subParentItem="subParentItem" let-subChild="subChild">
+    <ul class="childNav" appDropdown>
+        <li *ngFor="let item of parentItem?.sub" appDropdownLink class="nav-item">
+            <a routerLink="{{item.state}}" *ngIf="item.type === 'link'"
+               [ngClass]="{open: item.active, 'd-none':item.is_hide}" routerLinkActive="open">
+                <i *ngIf="item.icon" [ngClass]="'nav-icon '+ item.icon "></i>
+                <ng-container *ngIf="translationArray !=null">
+                    <span class="item-name lvl1">
+                        <ng-container
+                                *ngIf="subParentItem == null;else subParent">{{translationArray[parentItem?.name][item.name]}}</ng-container>
+                        <ng-template
+                            #subParent>{{translationArray[subParentItem?.name][parentItem?.name][item.name]}}</ng-template>
+                    </span>
+                </ng-container>
+            </a>
+
+            <div *ngIf="item.type === 'dropDown' && translationArray!=undefined" [ngClass]="{lvl2:subChild?.length>0}">
+                <a appDropdownToggle [ngClass]="{open: item.active, 'd-none':item.is_hide}" routerLinkActive="open">
+                    <i *ngIf="item.icon" [ngClass]="'nav-icon '+ item.icon "></i>
+                    <span class="item-name" *ngIf="translationArray !=null">
+                        <ng-container *ngIf="item?.sub?.length>0">
+                            <ng-container *ngIf="translationArray[parentItem?.name]!=undefined;else childTemplate">
+                                {{translationArray[parentItem?.name][item.name]?.LABEL}}
+                            </ng-container>
+                            <ng-template #childTemplate>{{item?.name}}</ng-template>
+                        </ng-container>
+                    </span>
+                    <i class="dd-arrow i-Arrow-Down"></i>
+                </a>
+                <ng-container [ngTemplateOutlet]="menuTemplate"
+                              [ngTemplateOutletContext]="{parentItem: item,subParentItem:parentItem,subChild:item?.sub}"></ng-container>
+            </div>
+
+        </li>
+    </ul>
+</ng-template>
+<div [ngClass]="{open: navService.sidebarState.childnavOpen}" class="sidebar-overlay" (click)="closeChildNav()"></div>
