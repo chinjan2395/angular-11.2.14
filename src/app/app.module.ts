@@ -8,6 +8,7 @@ import {SharedModule} from './shared/shared.module';
 import {AppRoutingModule} from './app-routing.module';
 import {Router} from '@angular/router';
 import * as Sentry from '@sentry/angular';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import * as Sentry from '@sentry/angular';
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ],
   providers: [
     {
@@ -33,7 +35,8 @@ import * as Sentry from '@sentry/angular';
     },
     {
       provide: APP_INITIALIZER,
-      useFactory: () => () => {},
+      useFactory: () => () => {
+      },
       deps: [Sentry.TraceService],
       multi: true,
     },
