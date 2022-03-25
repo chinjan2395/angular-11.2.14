@@ -1,33 +1,34 @@
 {
-  "dev": {
+  "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-latestangular-dev-214204-authRole",
-      "UnauthRoleArn": "arn:aws:iam::912604758109:role/amplify-latestangular-dev-214204-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::912604758109:role/amplify-latestangular-dev-214204-authRole",
+      "AuthRoleName": "amplify-amplifyb63653404e5f4-staging-112705-authRole",
+      "UnauthRoleArn": "arn:aws:iam::912604758109:role/amplify-amplifyb63653404e5f4-staging-112705-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::912604758109:role/amplify-amplifyb63653404e5f4-staging-112705-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-latestangular-dev-214204-deployment",
-      "UnauthRoleName": "amplify-latestangular-dev-214204-unauthRole",
-      "StackName": "amplify-latestangular-dev-214204",
-      "StackId": "arn:aws:cloudformation:us-east-2:912604758109:stack/amplify-latestangular-dev-214204/9349be70-6b1d-11ec-9fc5-060e1b3848e0",
+      "DeploymentBucketName": "amplify-amplifyb63653404e5f4-staging-112705-deployment",
+      "UnauthRoleName": "amplify-amplifyb63653404e5f4-staging-112705-unauthRole",
+      "StackName": "amplify-amplifyb63653404e5f4-staging-112705",
+      "StackId": "arn:aws:cloudformation:us-east-2:912604758109:stack/amplify-amplifyb63653404e5f4-staging-112705/015b3170-a9d3-11ec-ba58-06694700246a",
       "AmplifyAppId": "dhe5c6gw1rdjs",
-      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-latestangular-dev-214204-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-amplifyb63653404e5f4-staging-112705-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "latestangular7c502c96": {}
+        "CRMIAMResources": {},
+        "CRMAuthResource": {}
       },
       "function": {
-        "latestangular7c502c96CustomMessage": {
-          "REDIRECTURL": "",
-          "EMAILSUBJECT": "",
-          "EMAILMESSAGE": "",
-          "deploymentBucketName": "amplify-latestangular-dev-214204-deployment",
-          "s3Key": "amplify-builds/latestangular7c502c96CustomMessage-47774848756744773630-build.zip"
+        "CRMAuthResourcePostAuthentication": {
+          "deploymentBucketName": "amplify-amplifyb63653404e5f4-staging-112705-deployment",
+          "s3Key": "amplify-builds/CRMAuthResourcePostAuthentication-703663747a4243633673-build.zip"
         },
-        "latestangular7c502c96PostConfirmation": {
-          "GROUP": "",
-          "deploymentBucketName": "amplify-latestangular-dev-214204-deployment",
-          "s3Key": "amplify-builds/latestangular7c502c96PostConfirmation-49696b4b705253785572-build.zip"
+        "CRMAuthResourcePostConfirmation": {
+          "deploymentBucketName": "amplify-amplifyb63653404e5f4-staging-112705-deployment",
+          "s3Key": "amplify-builds/CRMAuthResourcePostConfirmation-6555315333797a4f6a37-build.zip"
+        },
+        "AdminQueriesb767e0b8": {
+          "deploymentBucketName": "amplify-amplifyb63653404e5f4-staging-112705-deployment",
+          "s3Key": "amplify-builds/AdminQueriesb767e0b8-5a77494c79647237644f-build.zip"
         }
       }
     }
