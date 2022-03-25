@@ -1,0 +1,12 @@
+projects:
+  CRMGraphqlAPI:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.graphql
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: angular
+        generatedFileName: src/app/shared/shared-services/graphql.service.ts
+        docsFilePath: src/graphql
