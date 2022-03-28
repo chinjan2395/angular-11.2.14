@@ -1,7 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: ''
+title: 'Suggest an idea for this project'
 labels: enhancement
 assignees: chinjan2395
 
@@ -10,8 +9,5 @@ assignees: chinjan2395
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
-
 **Issue id or ids**
-Assign issue id with # number
+Assign issue id. Ex. #00234
