@@ -7,3 +7,30 @@ query GetTodos {
     priority
   }
 }
+query GetUsers($id: ID!, $name: String!) {
+  getUsers(id: $id, name: $name) {
+    id
+    name
+    email
+    password
+    username
+    create_at
+  }
+}
+query ListUsers(
+  $filter: TableUsersFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      email
+      password
+      username
+      create_at
+    }
+    nextToken
+  }
+}
