@@ -1,4 +1,38 @@
 {
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-latestangular-dev-160439-authRole",
+      "UnauthRoleArn": "arn:aws:iam::912604758109:role/amplify-latestangular-dev-160439-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::912604758109:role/amplify-latestangular-dev-160439-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-latestangular-dev-160439-deployment",
+      "UnauthRoleName": "amplify-latestangular-dev-160439-unauthRole",
+      "StackName": "amplify-latestangular-dev-160439",
+      "StackId": "arn:aws:cloudformation:us-east-2:912604758109:stack/amplify-latestangular-dev-160439/4689db00-ac55-11ec-b982-0a649f7b48fe",
+      "AmplifyAppId": "dhe5c6gw1rdjs",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-latestangular-dev-160439-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "function": {
+        "CRMAuthResourcePostAuthentication": {
+          "deploymentBucketName": "amplify-latestangular-dev-160439-deployment",
+          "s3Key": "amplify-builds/CRMAuthResourcePostAuthentication-572b576a434f7a43794e-build.zip"
+        },
+        "CRMAuthResourcePostConfirmation": {
+          "deploymentBucketName": "amplify-latestangular-dev-160439-deployment",
+          "s3Key": "amplify-builds/CRMAuthResourcePostConfirmation-394c6170353458644a38-build.zip"
+        },
+        "AdminQueriesb767e0b8": {
+          "deploymentBucketName": "amplify-latestangular-dev-160439-deployment",
+          "s3Key": "amplify-builds/AdminQueriesb767e0b8-534c55473759496c5a4a-build.zip"
+        }
+      },
+      "auth": {
+        "userPoolGroups": {},
+        "CRMAuthResource": {}
+      }
+    }
+  },
   "staging": {
     "awscloudformation": {
       "AuthRoleName": "amplify-amplifyb63653404e5f4-staging-112705-authRole",
@@ -15,7 +49,8 @@
     "categories": {
       "auth": {
         "CRMIAMResources": {},
-        "CRMAuthResource": {}
+        "CRMAuthResource": {},
+        "userPoolGroups": {}
       },
       "function": {
         "CRMAuthResourcePostAuthentication": {

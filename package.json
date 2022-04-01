@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --configuration=en --port 4201",
+    "start": "ng serve --configuration=en",
     "build": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build",
     "build-prod": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build --prod",
     "test": "ng test",
