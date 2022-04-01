@@ -66,3 +66,7 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+/amplify/hooks/README.md
+/amplify/backend/function/AdminQueriesb767e0b8/src/yarn.lock
+/amplify/backend/function/CRMAuthResourcePostAuthentication/src/yarn.lock
+/amplify/backend/function/CRMAuthResourcePostConfirmation/src/yarn.lock
