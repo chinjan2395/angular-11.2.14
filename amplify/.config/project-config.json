@@ -11,8 +11,7 @@
       "SourceDir": "src",
       "DistributionDir": "dist",
       "BuildCommand": "npm.cmd run-script build",
-      "StartCommand": "ng serve",
-      "ServerlessContainers": true
+      "StartCommand": "ng serve"
     }
   }
 }

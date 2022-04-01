@@ -245,6 +245,290 @@
           <context context-type="linenumber">76,80</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="app.menu.dashboard" datatype="html">
+        <source>Dashboard</source>
+        <target>Dashboard i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.invoices" datatype="html">
+        <source>Invoices</source>
+        <target>Invoices i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.sales" datatype="html">
+        <source>Sales</source>
+        <target>Sales i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.expenses" datatype="html">
+        <source>Expenses</source>
+        <target>Expenses i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.payments" datatype="html">
+        <source>Payments</source>
+        <target>Payments i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.projects" datatype="html">
+        <source>Projects</source>
+        <target>Projects i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.tickets" datatype="html">
+        <source>Tickets</source>
+        <target>Tickets i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">145</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.clients" datatype="html">
+        <source>Clients</source>
+        <target>Clients i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.customers" datatype="html">
+        <source>Customers</source>
+        <target>Customers i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.estimates" datatype="html">
+        <source>Estimates</source>
+        <target>Estimates i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">147</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.items" datatype="html">
+        <source>Items</source>
+        <target>Items i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.tax-rates" datatype="html">
+        <source>Tax Rates</source>
+        <target>Tax Rates i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.contracts" datatype="html">
+        <source>Contracts</source>
+        <target>Contracts i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.tasks" datatype="html">
+        <source>Tasks</source>
+        <target>Tasks i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.users" datatype="html">
+        <source>Users</source>
+        <target>Users i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.notes" datatype="html">
+        <source>Notes</source>
+        <target>Notes i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">125</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.reports" datatype="html">
+        <source>Reports</source>
+        <target>Reports i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.timesheets" datatype="html">
+        <source>Timesheets</source>
+        <target>Timesheets i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.settings" datatype="html">
+        <source>Settings</source>
+        <target>Settings i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">142</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.system" datatype="html">
+        <source>System</source>
+        <target>System i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.themes" datatype="html">
+        <source>Themes</source>
+        <target>Themes i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.menu" datatype="html">
+        <source>Menu</source>
+        <target>Menu i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">150</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.custom-fields" datatype="html">
+        <source>Custom Fields</source>
+        <target>Custom Fields i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">151</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.menu.system-info" datatype="html">
+        <source>System Info</source>
+        <target>System Info i18n</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/shared-services/navigation.service.ts</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
