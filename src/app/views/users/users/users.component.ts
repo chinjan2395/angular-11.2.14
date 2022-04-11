@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {APIService} from '../../../shared/shared-services/graphql.service';
+import {APIService, ListUsersQuery} from '../../../shared/shared-services/graphql.service';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../../../shared/shared-classes/User';
 
@@ -27,6 +27,14 @@ export class UsersComponent implements OnInit {
         });
         console.table(users);
       });
+
+    this.api
+      .ListUsers()
+      .then((response: ListUsersQuery) => {
+        const items: Array<any> | null = response.items;
+        console.log('list users response', response, items);
+      })
+      .catch((e) => console.log('error listing users...', e));
   }
 
   ngOnInit(): void {

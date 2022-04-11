@@ -5,9 +5,9 @@
     "env": {
       "Type": "String"
     },
-    "authCRMAuthResourceUserPoolId": {
+    "authlatestangular40929cccUserPoolId": {
       "Type": "String",
-      "Default": "authCRMAuthResourceUserPoolId"
+      "Default": "authlatestangular40929cccUserPoolId"
     },
     "deploymentBucketName": {
       "Type": "String"
@@ -38,12 +38,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "AdminQueriesb767e0b8",
+            "AdminQueries3f5790d7",
             {
               "Fn::Join": [
                 "",
                 [
-                  "AdminQueriesb767e0b8",
+                  "AdminQueries3f5790d7",
                   "-",
                   {
                     "Ref": "env"
@@ -58,9 +58,9 @@
             "ENV": {
               "Ref": "env"
             },
-            "GROUP": "CRMUserPoolGroup",
+            "GROUP": "Administrators",
             "USERPOOL": {
-              "Ref": "authCRMAuthResourceUserPoolId"
+              "Ref": "authlatestangular40929cccUserPoolId"
             }
           }
         },
@@ -88,12 +88,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "AdminQueriesb767e0b8LambdaRole",
+            "AdminQueries3f5790d7LambdaRole",
             {
               "Fn::Join": [
                 "",
                 [
-                  "AdminQueriesb767e0b8LambdaRole",
+                  "AdminQueries3f5790d7LambdaRole",
                   "-",
                   {
                     "Ref": "env"
@@ -189,7 +189,7 @@
                     },
                     ":userpool/",
                     {
-                      "Ref": "authCRMAuthResourceUserPoolId"
+                      "Ref": "authlatestangular40929cccUserPoolId"
                     }
                   ]
                 ]

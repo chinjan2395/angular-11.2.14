@@ -1,67 +1,91 @@
 # this is an auto generated file. This will be overwritten
-subscription OnCreateUsers(
-  $id: ID
-  $name: String
-  $email: String
-  $password: String
-  $username: String
-) {
-  onCreateUsers(
-    id: $id
-    name: $name
-    email: $email
-    password: $password
-    username: $username
-  ) {
+subscription OnCreateTask {
+  onCreateTask {
     id
-    name
-    email
-    password
-    username
-    create_at
+    title
+    description
+    status
+    createdAt
+    updatedAt
   }
 }
-subscription OnUpdateUsers(
-  $id: ID
-  $name: String
-  $email: String
-  $password: String
-  $username: String
-) {
-  onUpdateUsers(
-    id: $id
-    name: $name
-    email: $email
-    password: $password
-    username: $username
-  ) {
+subscription OnUpdateTask {
+  onUpdateTask {
     id
-    name
-    email
-    password
-    username
-    create_at
+    title
+    description
+    status
+    createdAt
+    updatedAt
   }
 }
-subscription OnDeleteUsers(
-  $id: ID
-  $name: String
-  $email: String
-  $password: String
-  $username: String
-) {
-  onDeleteUsers(
-    id: $id
-    name: $name
-    email: $email
-    password: $password
-    username: $username
-  ) {
+subscription OnDeleteTask {
+  onDeleteTask {
     id
-    name
+    title
+    description
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreatePrivateNote($owner: String) {
+  onCreatePrivateNote(owner: $owner) {
+    id
+    content
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnUpdatePrivateNote($owner: String) {
+  onUpdatePrivateNote(owner: $owner) {
+    id
+    content
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnDeletePrivateNote($owner: String) {
+  onDeletePrivateNote(owner: $owner) {
+    id
+    content
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnCreateUser {
+  onCreateUser {
+    id
     email
+    name
     password
     username
-    create_at
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateUser {
+  onUpdateUser {
+    id
+    email
+    name
+    password
+    username
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteUser {
+  onDeleteUser {
+    id
+    email
+    name
+    password
+    username
+    createdAt
+    updatedAt
   }
 }

@@ -53,6 +53,11 @@ amplify/logs
 amplify/mock-data
 amplify/backend/amplify-meta.json
 amplify/backend/.temp
+/amplify/hooks/README.md
+/amplify/backend/function/AdminQueries3f5790d7/src/yarn.lock
+/amplify/backend/function/CRMAuthResourcePostAuthentication/src/yarn.lock
+/amplify/backend/function/CRMAuthResourcePostConfirmation/src/yarn.lock
+amplify/backend/awscloudformation
 build/
 dist/
 node_modules/
@@ -66,7 +71,5 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
-/amplify/hooks/README.md
-/amplify/backend/function/AdminQueriesb767e0b8/src/yarn.lock
-/amplify/backend/function/CRMAuthResourcePostAuthentication/src/yarn.lock
-/amplify/backend/function/CRMAuthResourcePostConfirmation/src/yarn.lock
+/src/assets/json/
+/amplify/backend/api/latestangular/resolvers/README.md

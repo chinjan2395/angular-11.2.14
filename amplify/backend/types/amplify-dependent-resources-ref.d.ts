@@ -1,9 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "auth": {
-        "userPoolGroups": {
-            "CRMUserPoolGroupGroupRole": "string"
-        },
-        "CRMAuthResource": {
+        "latestangular40929ccc": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
@@ -13,44 +10,24 @@ export type AmplifyDependentResourcesAttributes = {
             "AppClientID": "string"
         }
     },
-    "function": {
-        "CRMAuthResourcePostAuthentication": {
-            "Name": "string",
-            "Arn": "string",
-            "LambdaExecutionRole": "string",
-            "Region": "string"
-        },
-        "CRMAuthResourcePostConfirmation": {
-            "Name": "string",
-            "Arn": "string",
-            "LambdaExecutionRole": "string",
-            "Region": "string"
-        },
-        "AdminQueriesb767e0b8": {
-            "Name": "string",
-            "Arn": "string",
-            "Region": "string",
-            "LambdaExecutionRole": "string"
-        }
-    },
     "api": {
+        "latestangular": {
+            "GraphQLAPIKeyOutput": "string",
+            "GraphQLAPIIdOutput": "string",
+            "GraphQLAPIEndpointOutput": "string"
+        },
         "AdminQueries": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"
-        },
-        "CRMGraphqlAPI": {
-            "GraphQLAPIKeyOutput": "string",
-            "GraphQLAPIIdOutput": "string",
-            "GraphQLAPIEndpointOutput": "string"
         }
     },
-    "hosting": {
-        "S3AndCloudFront": {
+    "function": {
+        "AdminQueries3f5790d7": {
+            "Name": "string",
+            "Arn": "string",
             "Region": "string",
-            "HostingBucketName": "string",
-            "WebsiteURL": "string",
-            "S3BucketSecureURL": "string"
+            "LambdaExecutionRole": "string"
         }
     }
 }

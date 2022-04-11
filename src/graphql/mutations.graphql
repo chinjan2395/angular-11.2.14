@@ -1,31 +1,118 @@
 # this is an auto generated file. This will be overwritten
-mutation CreateUsers($input: CreateUsersInput!) {
-  createUsers(input: $input) {
+mutation CreateTask(
+  $input: CreateTaskInput!
+  $condition: ModelTaskConditionInput
+) {
+  createTask(input: $input, condition: $condition) {
     id
-    name
-    email
-    password
-    username
-    create_at
+    title
+    description
+    status
+    createdAt
+    updatedAt
   }
 }
-mutation UpdateUsers($input: UpdateUsersInput!) {
-  updateUsers(input: $input) {
+mutation UpdateTask(
+  $input: UpdateTaskInput!
+  $condition: ModelTaskConditionInput
+) {
+  updateTask(input: $input, condition: $condition) {
     id
-    name
-    email
-    password
-    username
-    create_at
+    title
+    description
+    status
+    createdAt
+    updatedAt
   }
 }
-mutation DeleteUsers($input: DeleteUsersInput!) {
-  deleteUsers(input: $input) {
+mutation DeleteTask(
+  $input: DeleteTaskInput!
+  $condition: ModelTaskConditionInput
+) {
+  deleteTask(input: $input, condition: $condition) {
     id
-    name
+    title
+    description
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation CreatePrivateNote(
+  $input: CreatePrivateNoteInput!
+  $condition: ModelPrivateNoteConditionInput
+) {
+  createPrivateNote(input: $input, condition: $condition) {
+    id
+    content
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation UpdatePrivateNote(
+  $input: UpdatePrivateNoteInput!
+  $condition: ModelPrivateNoteConditionInput
+) {
+  updatePrivateNote(input: $input, condition: $condition) {
+    id
+    content
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation DeletePrivateNote(
+  $input: DeletePrivateNoteInput!
+  $condition: ModelPrivateNoteConditionInput
+) {
+  deletePrivateNote(input: $input, condition: $condition) {
+    id
+    content
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    id
     email
+    name
     password
     username
-    create_at
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    email
+    name
+    password
+    username
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    id
+    email
+    name
+    password
+    username
+    createdAt
+    updatedAt
   }
 }

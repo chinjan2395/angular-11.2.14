@@ -32,7 +32,7 @@ export class Profile extends Model implements IProfile {
       skype: 'skype',
       twitter: 'twitter',
       signature: 'signature',
-      emailSignature: 'email_signature'
+      emailSignature: 'email_signature',
     };
   }
 
