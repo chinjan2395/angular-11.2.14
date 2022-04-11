@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "latestangular",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "D:\\wamp64\\www\\latest-angular\\amplify\\backend\\api\\latestangular\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authlatestangular40929ccc"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 7,
+        "apiKeyExpirationDate": "2022-04-15T11:27:21.785Z",
+        "keyDescription": "Additional auth type"
+      }
+    ]
+  }
+}

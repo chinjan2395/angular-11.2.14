@@ -8,7 +8,7 @@ import {AuthGuard} from './shared/shared-services/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'users',
     pathMatch: 'full'
   },
   {
@@ -39,6 +39,18 @@ const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
+        // canActivate: [HasPermissionGuard]
+      }
+    ]
+  },
+  {
+    path: 'users',
+    component: AdminLayoutComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./views/users/users.module').then(m => m.UsersModule)
         // canActivate: [HasPermissionGuard]
       }
     ]

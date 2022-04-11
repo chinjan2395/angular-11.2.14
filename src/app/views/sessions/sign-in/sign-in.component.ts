@@ -43,11 +43,11 @@ export class SignInComponent implements OnInit {
     });
 
     this.signInForm = this.formBuilder.group({
-      username: ['', [
+      username: ['vanix61934', [
         Validators.required,
         Validators.minLength(4)
       ]],
-      password: ['', [
+      password: ['Password@1234', [
         Validators.required
       ]]
     });
@@ -98,6 +98,24 @@ export class SignInComponent implements OnInit {
       this.ls.setItem('accessToken', getSession.getAccessToken());
     });
     this.ls.setItem('username', response.getUsername());
+    /*const currentSession = Auth.currentSession();
+    // console.log('amplifyAuth.signIn response', response2);
+    console.log('response', response2);
+    console.log('currentSession', currentSession);
+    // console.log('Auth.getAccessToken()', `${(await currentSession).getAccessToken()}`);
+    const apiName = 'AdminQueries';
+    const path = '/addUserToGroup';
+    const myInit = {
+      body: {
+        username: username,
+        groupname: 'Administrators'
+      },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `${(await Auth.currentSession()).getAccessToken().getJwtToken()}`
+      }
+    };
+    await API.post(apiName, path, myInit);*/
     await this.router.navigate(['/']);
   }
 }

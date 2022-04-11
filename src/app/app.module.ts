@@ -9,6 +9,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {Router} from '@angular/router';
 import * as Sentry from '@sentry/angular';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     ReactiveFormsModule,
     SharedModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [
     {

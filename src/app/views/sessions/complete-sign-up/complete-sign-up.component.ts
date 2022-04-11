@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import {MAT_BOTTOM_SHEET_DATA, MatBottomSheet} from '@angular/material/bottom-sheet';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AmplifyAuthService} from '../../../shared/shared-services/amplify-auth.service';
 
@@ -20,7 +20,7 @@ export class CompleteSignUpComponent {
   alreadyHasVerificationCode = false;
 
   constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public data,
-              private bottomSheet: MatBottomSheetRef,
+              private bottomSheet: MatBottomSheet,
               private formBuilder: FormBuilder,
               private amplifyAuth: AmplifyAuthService) {
     if (data?.alreadyHasVerificationCode) {
@@ -38,11 +38,9 @@ export class CompleteSignUpComponent {
     this.loadingText = 'Completing new password';
     this.submitted = true;
     if (this.form.valid) {
-      const {username, code, password} = this.form.value;
-      this.amplifyAuth.confirmSignUp(username, code, password)
-        .then(response => {
-          this.bottomSheet.dismiss();
-        })
+      const {username, code} = this.form.value;
+      this.amplifyAuth.confirmSignUp(username, code)
+        .then(() => this.bottomSheet.dismiss())
         .catch(error => console.log('CompleteSignUpComponent submit error', error))
         .finally(() => this.loading = false);
     } else {
