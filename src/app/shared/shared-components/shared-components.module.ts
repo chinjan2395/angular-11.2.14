@@ -17,6 +17,7 @@ import {PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
 import {SharedPipesModule} from '../shared-pipes/shared-pipes.module';
 import {SearchModule} from './search/search.module';
 import {SharedDirectivesModule} from '../shared-directives/shared-directives.module';
+import {BreadcrumbsComponent} from './breadcrumbs/breadcrumbs.component';
 
 const components = [
   ErrorMessageComponent,
@@ -26,7 +27,8 @@ const components = [
   BtnLoadingComponent,
   InheritedSnackBarComponent,
   HeaderSidebarCompactComponent,
-  SidebarCompactComponent
+  SidebarCompactComponent,
+  BreadcrumbsComponent
 ];
 
 @NgModule({

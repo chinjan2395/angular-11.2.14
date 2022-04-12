@@ -28,13 +28,13 @@ export class UsersComponent implements OnInit {
         console.table(users);
       });
 
-    this.api
+    /*this.api
       .ListUsers()
       .then((response: ListUsersQuery) => {
         const items: Array<any> | null = response.items;
         console.log('list users response', response, items);
       })
-      .catch((e) => console.log('error listing users...', e));
+      .catch((e) => console.log('error listing users...', e));*/
   }
 
   ngOnInit(): void {
