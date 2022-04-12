@@ -7,6 +7,7 @@ const routes: Routes = [
     path: '',
     component: UsersComponent,
     data: {
+      breadcrumb: $localize`:@@app.menu.users:`,
       icon: 'nav-icon i-Checked-User',
       status: true
     }
